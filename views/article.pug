@@ -2,18 +2,33 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  p I am Raju Veerlapati
-  - var btnType = 'info'
-  - var btnSize = 'lg'
-  button(type='button' class=`btn btn-${btnType} btn-${btnSize}` onclick="moreClaps()") Press Me
-  div(id='target') Clap for me
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let article = [
+                    {
+                        "Article_name": "Spider-Man",
+                        "Article_style": "Comedy",
+                        "Article_cost": 50
+                    },
+                    {
+                        "Article_name": "Dracula",
+                        "Article_style": "Horror",
+                        "Article_cost": 47
+                    },
+                    {
+                        "Article_name": "Romeo and Juliet",
+                        "Article_style": "Romance",
+                        "Article_cost": 55
+                    },                   
+                ]
+            each c,index in player
+                div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_name}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_style}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_cost}
 
-  script.
-    var clap_count = 0;
-    function moreClaps(){
-      clap_count += 2;
-      document.getElementById('target').innerHTML= `Clap ${clap_count} times.`;
-    }
-
-  
+                script.                
+                      function buy(num)
+                      {
+                            alert(`You purchased item ${num+1}`)
+                      }
