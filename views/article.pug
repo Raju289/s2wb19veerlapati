@@ -5,7 +5,7 @@ block content
   div(class="container-fluid")
         div(class="row")
             -
-                let Article = [
+                let article = [
                       {
                         "Article_name": "Spider-man",
                         "Article_style": "Comedy",
@@ -22,7 +22,7 @@ block content
                         "Article_cost": 55
                     },                   
                 ]
-            each c,index in Article
+            each c,index in article
                 div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_name}
                 div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_style}
                 div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_cost}
