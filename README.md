@@ -2,5 +2,5 @@
 I am Raju Veerlapati
 
 
-ClassName: Articles
+ClassName: Article
 Attributes :  Article_name, Article_style, Article_cost
