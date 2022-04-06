@@ -22,7 +22,7 @@ block content
                         "Article_cost": 55
                     },                   
                 ]
-            each c,index in player
+            each c,index in article 
                 div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_name}
                 div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_style}
                 div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_cost}
