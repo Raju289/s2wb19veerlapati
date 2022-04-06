@@ -1,2 +1,6 @@
 # s2wb19veerlapati
-added new file
+I am Raju Veerlapati
+
+
+ClassName: Articles
+Attributes :  Article_name, Article_style, Article_cost
