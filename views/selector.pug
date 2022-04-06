@@ -2,18 +2,11 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  p I am Raju Veerlapati
-  - var btnType = 'info'
-  - var btnSize = 'lg'
-  button(type='button' class=`btn btn-${btnType} btn-${btnSize}` onclick="moreClaps()") Press Me
-  div(id='target') Clap for me
-
-  script.
-    var clap_count = 0;
-    function moreClaps(){
-      clap_count += 2;
-      document.getElementById('target').innerHTML= `Clap ${clap_count} times.`;
-    }
+    - var image_names= ["avengers.jpg","Spider-man.jpg","big-boy.jpg","romeo-and-juliet.jpg","dracula.jpg"]            
+        -for(let i=0;i<3;i++){
+            - let rand=Math.floor(Math.random()*5)
+            img(src= `/images/${image_names[rand]}` alt="image", height="300", width="300" class="margin-top")
+        -}
+ 
 
   
