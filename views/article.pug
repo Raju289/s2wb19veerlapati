@@ -2,37 +2,4 @@ extends layout
 
 block content
   h1= title
-  div(class="container-fluid")
-        div(class="row")
-            -
-              let Article = [
-                      {
-                        "Article_name": "Spider-man",
-                        "Article_style": "Comedy",
-                        "Article_cost": 50
-                    },
-                    {
-                        "Article_name": "Dracula",
-                        "Article_style": "Horror",
-                        "Article_cost": 47
-                    },
-                    {
-                        "Article_name": "Romeo-and-juliet",
-                        "Article_style": "Romance",
-                        "Article_cost": 55
-                    },                   
-                ]
-            each c,index in Article 
-                div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_name}
-                div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_style}
-                div(class="col-sm-2" onclick=`buy(${index})`) #{c.Article_cost}
-
-                script.                
-                      function buy(num)
-                      {
-                            alert(`You purchased item ${num+1}`)
-                      }
   
- 
-
-
