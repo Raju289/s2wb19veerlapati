@@ -2,18 +2,14 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  p I am Raju Veerlapati
-  - var btnType = 'info'
-  - var btnSize = 'lg'
-  button(type='button' class=`btn btn-${btnType} btn-${btnSize}` onclick="moreClaps()") Press Me
-  div(id='target') Clap for me
-
-  script.
-    var clap_count = 0;
-    function moreClaps(){
-      clap_count += 2;
-      document.getElementById('target').innerHTML= `Clap ${clap_count} times.`;
-    }
-
+  p Welcome to #{title}. My name is Raju Veerlapati
+  - let results=[{electronic_name:"Mobiles",electronic_brand:"Apple",electronic_cost:"16200"},{electronic_name:"Tablet",electronic_brand:"Samsung",electronic_cost:"15207"},{electronic_brand:"Hyundai Elantra",electronic_color:"Grey",electronic_cost:"21434"}]
+  div(class="container-fluid")
+    div(class="row")
+      each electronics, index in results
+        div(class="col-sm-2" onclick=`buy(${index+1})`) #{electronics.electronic_name} - #{electronics.electronic_brand} - $#{electronics.electronic_cost}
   
+  script.
+    function buy(index){
+      alert(`You purchased item ${index}`);
+    }
